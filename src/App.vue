@@ -1,13 +1,16 @@
 <template>
+  <the-header title="Filmy do obejrzenia"></the-header>
   <stored-movies :movieslist="movies"></stored-movies>
 </template>
 
 <script>
 import StoredMovies from "./components/movies/StoredMovies.vue";
+import TheHeader from "./components/layouts/TheHeader.vue";
 
 export default {
   components: {
     StoredMovies,
+    TheHeader,
   },
   data() {
     return {
@@ -33,7 +36,7 @@ export default {
 </script>
 
 <style>
-@import url("https://fonts.googleapis.com/css2?family=Jost&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,600;1,400;1,500&display=swap');
 * {
   box-sizing: border-box;
 }
