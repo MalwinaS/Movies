@@ -1,26 +1,48 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <stored-movies :movieslist="movies"></stored-movies>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import StoredMovies from "./components/movies/StoredMovies.vue";
 
 export default {
-  name: 'App',
   components: {
-    HelloWorld
-  }
-}
+    StoredMovies,
+  },
+  data() {
+    return {
+      movies: [
+        {
+          id: "menu",
+          title: "Menu",
+          description:
+            "Młoda para wybiera się na odległą wyspę, do ekskluzywnej restauracji. Okazuje się jednak, że nie wszystko jest takie jakim się wydaje a w menu czekają zaskakujące niespodzianki.",
+          link: "https://www.filmweb.pl/film/Menu-2022-875647",
+        },
+        {
+          id: "bielmo",
+          title: "Bielmo",
+          description:
+            "W 1830 roku Akademią Wojskową w West Point wstrząsa seria brutalnych morderstw. Weteran-detektyw i młody kadet prowadzą śledztwo.",
+          link: "https://www.filmweb.pl/film/Bielmo-2022-870411",
+        },
+      ],
+    };
+  },
+};
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+@import url("https://fonts.googleapis.com/css2?family=Jost&display=swap");
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Jost", sans-serif;
+}
+
+body {
+  margin: 0;
 }
 </style>
