@@ -5,7 +5,7 @@
       :mode="storedResButtonMode"
       >Lista filmów</base-button
     >
-    <base-button @click="setSelectedTab('add-movie')" :mode="addResButtonMode"
+    <base-button @click="setSelectedTab('add-movie')" :mode="addResButtonMode" type="button"
       >Dodaj film</base-button
     >
   </base-card>
