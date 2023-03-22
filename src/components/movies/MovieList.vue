@@ -3,7 +3,7 @@
     <base-card>
       <header>
         <h3>{{ title }}</h3>
-        <base-button mode="flat">Usuń</base-button>
+        <base-button mode="flat" @click="removeMovie(id)">Usuń</base-button>
       </header>
       <p>{{ description }}</p>
       <nav>
@@ -17,7 +17,7 @@
 export default {
   props: {
     id: {
-      type: String,
+      type: Number,
       required: false,
     },
     title: {
@@ -33,6 +33,7 @@ export default {
       required: true,
     },
   },
+  inject: ["removeMovie"],
 };
 </script>
 

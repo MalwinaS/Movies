@@ -54,9 +54,8 @@ export default {
       ) {
         this.inputisInvalid = true;
       } else {
-              this.addMovie(enteredTitle, enteredDesc, enteredUrl);
+        this.addMovie(enteredTitle, enteredDesc, enteredUrl);
       }
-
     },
     confirmError() {
       this.inputisInvalid = false;

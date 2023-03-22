@@ -5,7 +5,10 @@
       :mode="storedResButtonMode"
       >Lista filmów</base-button
     >
-    <base-button @click="setSelectedTab('add-movie')" :mode="addResButtonMode" type="button"
+    <base-button
+      @click="setSelectedTab('add-movie')"
+      :mode="addResButtonMode"
+      type="button"
       >Dodaj film</base-button
     >
   </base-card>
@@ -55,6 +58,7 @@ export default {
     return {
       movieslist: this.movies,
       addMovie: this.addMovie,
+      removeMovie: this.removeMovie,
     };
   },
   methods: {
@@ -70,6 +74,10 @@ export default {
       };
       this.movies.unshift(newMovie);
       this.selectedTab = "stored-movies";
+    },
+    removeMovie(resId) {
+      const resIndex = this.movies.findIndex((res) => res.id === resId);
+      this.movies.splice(resIndex, 1);
     },
   },
 };

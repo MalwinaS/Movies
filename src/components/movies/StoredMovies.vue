@@ -3,6 +3,7 @@
     <movie-list
       v-for="movie in movieslist"
       :key="movie.id"
+      :id="movie.id"
       :title="movie.title"
       :description="movie.description"
       :link="movie.link"
