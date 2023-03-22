@@ -5,13 +5,13 @@
       :mode="storedResButtonMode"
       >Lista filmów</base-button
     >
-    <base-button 
-    @click="setSelectedTab('add-movie')" 
-    :mode="addResButtonMode"
+    <base-button @click="setSelectedTab('add-movie')" :mode="addResButtonMode"
       >Dodaj film</base-button
     >
   </base-card>
-  <component :is="selectedTab"></component>
+  <keep-alive>
+    <component :is="selectedTab"></component>
+  </keep-alive>
 </template>
 
 <script>
@@ -54,11 +54,22 @@ export default {
   provide() {
     return {
       movieslist: this.movies,
+      addMovie: this.addMovie,
     };
   },
   methods: {
     setSelectedTab(tab) {
       this.selectedTab = tab;
+    },
+    addMovie(title, description, url) {
+      const newMovie = {
+        id: new Date().toISOString(),
+        title: title,
+        description: description,
+        link: url,
+      };
+      this.movies.unshift(newMovie);
+      this.selectedTab = "stored-movies";
     },
   },
 };
