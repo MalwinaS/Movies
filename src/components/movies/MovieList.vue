@@ -7,7 +7,7 @@
       </header>
       <p>{{ description }}</p>
       <nav>
-        <a :href="link">Filmweb</a>
+        <a :href="link" target="_blank">Filmweb</a>
       </nav>
     </base-card>
   </li>
