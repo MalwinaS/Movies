@@ -16,7 +16,7 @@ export default {
   components: {
     MovieList,
   },
-  props: ["movieslist"],
+  inject: ["movieslist"],
 };
 </script>
 
