@@ -1,4 +1,6 @@
-# movies
+# Movies
+
+Live: https://malwinas.github.io/Movies/
 
 ## Project setup
 ```
